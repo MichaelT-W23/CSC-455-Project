@@ -1,0 +1,59 @@
+I have 8 SQL tables in a Schema Diagram
+
+The first table is named "Employee" and has the following 6 values. 
+•EmployeeID (Primary Key)
+•FName 
+•LName 
+•PhoneNumber
+•Pilot License (Optional)
+•Airport Code (Foreign Key)
+
+The second table is "Operates" and has the following 6 values 
+•EmployeeID (Primary Key and Foreign Key)
+•TrackingNumber (Primary Key and Foreign Key)
+•FlightDate (Primary Key and Foreign Key)
+•ArrivalAirport (Primary Key and Foreign Key)
+•PlaneID (Primary Key and Foreign Key)
+•DepatureAirport (Primary Key and Foreign Key)
+
+The third table is "Airport" and has the following 5 values 
+•AirportCode (Primary Key)
+•City 
+•State (Optional)
+•Country 
+•MaxPlanes 
+
+The fourth table is "WorksOn" and has the following 2 values 
+•EmployeeID (Primary Key and Foreign Key)
+•PlaneID (Primary Key and Foreign Key)
+
+The fifth table is "Flight" and has the following 8 values 
+•ArrivalAirport (Primary Key and Foreign Key)
+•DepatureAirport (Pimary Key and Foreign Key)
+•PlaneID (Primary Key and Foreign Key)
+•TrackingNumber (Primary Key)
+•FlightDate (Primary Key)
+•DepatureTime
+•ArrivalTime 
+•GateNumber
+
+The sixth table is "Plane" and has the following 4 values 
+•PlaneID (Primary Key)
+•Model
+•SeatCapacity 
+•Airport (Foreign Key)
+
+The seventh table is "Passenger" and has the following 4 values 
+•PassportNumber (Primary Key)
+•FName
+•LName 
+•NumBags
+
+The eighth table is "GoesOn" and has the following 7 values
+•PassportNumber (Primary Key and Foreign Key)
+•TrackingNumber (Primary Key and Foreign Key)
+•FlightDate (Primary Key and Foreign Key)
+•ArrivalAirport (Primary Key and Foreign Key)
+•PlaneID (Primary Key and Foreign Key)
+•DepatureAirport (Primary Key and Foreign Key)
+•SeatNumber 

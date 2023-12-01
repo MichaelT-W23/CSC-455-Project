@@ -1,0 +1,123 @@
+I have an ERD Diagram with 5 entites 
+
+The first entity is "Airport"
+Airport has the following 5 attributes 
+•AirportCode (Unique)
+•City
+•State (Optional)
+•Country
+•MaxPlanes 
+
+
+
+
+
+The second entity is "Employee"
+Employee has the following 4 attributes 
+•EmployeeID (Unique)
+•PhoneNumber
+•PilotLicense (Optional)
+•Name (Composite)
+
+The "Name" attribute has the following 2 attributes
+•FName 
+•LName 
+
+
+
+
+
+The third entity is "Plane"
+Plane has the following 3 attributes
+•PlaneID (Unique)
+•Model
+•SeatCapacity 
+
+
+
+
+
+The fourth entity is "Flight"
+Flight has the following 4 attributes 
+•DepatureTime 
+•ArrivalTime 
+•GateNumber
+•FlightID (Composite and weak)
+
+The FlightID attribute has the 2 following attributes
+•TrackingNumber
+•FlightDate 
+
+NOTE: The "Flight" entity is a weak entity
+
+
+
+
+
+The fifth entity is "Passenger"
+Passenger has the 3 following attributes
+•PassportNumber (Unique)
+•NumBags 
+•Name (Composite)
+
+The Name attribute has the 2 following attributes
+•FName
+•LName
+
+
+
+
+
+*RELATIONSHIPS*
+
+Airport
+•The Airport and Flight entites have a (1:M) relationship called "Arrives". (Mandatory one to Optional Many)
+
+•The Airport and Flight entites have a (1:M) relationship called "Departs". (Mandatory one to Optional Many)
+
+•The Airport and Employee entites have a (1:M) relationship called "WorksAt". (Mandatory one to Mandatory Many)
+
+•The Airport and Plane entites have a (1:M) relationship called "IsAt" (Mandatory one to Mandatory Many)
+
+
+
+Employee 
+•The Employee and Plane entites have a (M:N) relationship called "WorksOn". (Mandatory Many to Optional Many)
+
+•The Employee and Flight entites have a (M:N) relationship called "Operates". (Mandatory Many to Optional Many)
+
+•The Airport and Employee entites have a (1:M) relationship called "WorksAt". (Mandatory one to Mandatory Many)
+
+
+
+Plane 
+•The Plane and Flight entites have a (1:M) relationship called "Flys". (Mandatory One to Mandatory Many)
+
+•The Employee and Plane entites have a (M:N) relationship called "WorksOn". (Mandatory Many to Optional Many)
+
+•The Airport and Plane entites have a (1:M) relationship called "IsAt" (Mandatory one to Mandatory Many)
+
+NOTE: The "Flys" relationship is a weak relationship
+
+
+
+Flight
+•The Airport and Flight entites have a (1:M) relationship called "Arrives". (Mandatory one to Optional Many)
+
+•The Airport and Flight entites have a (1:M) relationship called "Departs". (Mandatory one to Optional Many)
+
+•The Plane and Flight entites have a (1:M) relationship called "Flys". (Mandatory One to Mandatory Many)
+
+•The Employee and Flight entites have a (M:N) relationship called "Operates". (Mandatory Many to Optional Many)
+
+•The Flight and Passenger entites have a (M:N) relationship called "GoesOn". (Optional Many to Mandatory Many)
+
+NOTE: The "GoesOn" has an attribute called "SeatNumber"
+NOTE: The "Flys" relationship is a weak relationship
+
+
+
+Passenger 
+•The Flight and Passenger entites have a (M:N) relationship called "GoesOn". (Optional Many to Mandatory Many)
+
+NOTE: The "GoesOn" has an attribute called "SeatNumber"
