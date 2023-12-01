@@ -2,7 +2,7 @@
 
 This is our final project for CSC 455.
 
-# Contributors
+### Contributors
 - Wills Edgar 
 - Michael Totaro 
 - Kenny Dearstine 
