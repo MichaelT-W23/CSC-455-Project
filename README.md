@@ -2,6 +2,16 @@
 
 This is our final project for CSC 455.
 
+### Resources
+- [How to use FileZilla](https://docs.google.com/document/d/1kDDiAZMdc4ov8fwqtlIZfRFJizsigh7ZSQzKRzeeSyw/edit?usp=sharing)
+- [Documentation](https://docs.google.com/document/d/13sCgZgewMzvPzHC6DZ2im5wGZlEMc2C3UAfP15KJ5gY/edit?usp=sharing)
+
+### Contributors
+- Wills Edgar 
+- Michael Totaro 
+- Kenny Dearstine 
+- Michael Emborsky
+
 ### Create a local copy of this repository using the following command 
 ```
 git clone git@github.com:MichaelT-W23/CSC-455-Project.git
@@ -28,16 +38,6 @@ Push changes
 ```
 git push
 ```
-
-### Resources
-- [How to use FileZilla](https://docs.google.com/document/d/1kDDiAZMdc4ov8fwqtlIZfRFJizsigh7ZSQzKRzeeSyw/edit?usp=sharing)
-- [Documentation](https://docs.google.com/document/d/13sCgZgewMzvPzHC6DZ2im5wGZlEMc2C3UAfP15KJ5gY/edit?usp=sharing)
-
-### Contributors
-- Wills Edgar 
-- Michael Totaro 
-- Kenny Dearstine 
-- Michael Emborsky
 
 ### Links to website
 Wills
