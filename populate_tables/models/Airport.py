@@ -24,4 +24,4 @@ class Airport:
 
     def __str__(self):
         #(AirportCode, City, State, Country, MaxPlanes)
-        return f"(\"{self.get_airport_code()}\", \"{self.get_city()}\", \"{self.get_state()}\", \"{self.get_country()}\", \"{self.get_max_planes()}\"),"
+        return f"('{self.get_airport_code()}', '{self.get_city()}', '{self.get_state()}', '{self.get_country()}', {self.get_max_planes()}),"

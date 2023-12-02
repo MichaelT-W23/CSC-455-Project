@@ -27,4 +27,4 @@ class Operates:
 
     def __str__(self):
         #(EmployeeID, TrackingNumber, FlightDate, ArrivalAirport, PlaneID, DepartureAirport)
-        return f"(\"{self.get_employee_id()}\", \"{self.get_tracking_number()}\", \"{self.get_flight_date()}\", \"{self.get_arrival_airport()}\", \"{self.get_plane_id()}\", \"{self.get_departure_airport()}\"),"
+        return f"({self.get_employee_id()}, '{self.get_tracking_number()}', '{self.get_flight_date()}', '{self.get_arrival_airport()}', {self.get_plane_id()}, '{self.get_departure_airport()}'),"

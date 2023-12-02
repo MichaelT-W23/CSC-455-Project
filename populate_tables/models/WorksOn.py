@@ -11,4 +11,4 @@ class WorksOn:
 
     def __str__(self):
         #(EmployeeID, PlaneID)
-        return f"(\"{self.get_employee_id()}\", \"{self.get_plane_id()}\"),"
+        return f"({self.get_employee_id()}, {self.get_plane_id()}),"

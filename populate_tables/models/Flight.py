@@ -35,4 +35,4 @@ class Flight:
     
     def __str__(self):
         #(ArrivalAirport, DepartureAirport, PlaneID, TrackingNumber, FlightDate, DepartureTime, ArrivalTime, GateNumber)
-        return f"(\"{self.get_arrival_airport()}\", \"{self.get_departure_airport()}\", \"{self.get_plane_id()}\", \"{self.get_tracking_number()}\", \"{self.get_flight_date()}\", \"{self.get_departure_time()}\", \"{self.get_arrival_time()}\", \"{self.get_gate_number()}\"),"
+        return f"('{self.get_arrival_airport()}', '{self.get_departure_airport()}', {self.get_plane_id()}, '{self.get_tracking_number()}', '{self.get_flight_date()}', '{self.get_departure_time()}', '{self.get_arrival_time()}', '{self.get_gate_number()}'),"

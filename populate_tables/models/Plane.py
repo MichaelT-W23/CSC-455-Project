@@ -19,4 +19,4 @@ class Plane:
 
     def __str__(self):
         #(PlaneID, Model, SeatCapacity, Airport)
-        return f"(\"{self.get_plane_id()}\", \"{self.get_model()}\", \"{self.get_seat_capacity()}\", \"{self.get_airport()}\"),"
+        return f"({self.get_plane_id()}, '{self.get_model()}', {self.get_seat_capacity()}, '{self.get_airport()}'),"

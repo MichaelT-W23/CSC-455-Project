@@ -1,0 +1,197 @@
+Hartsfield-Jackson Atlanta International Airport
+Beijing Capital International Airport
+London Heathrow Airport
+Dubai International Airport
+Tokyo Haneda Airport
+Frankfurt Airport
+Sydney Kingsford Smith Airport
+Incheon International Airport
+Amsterdam Airport Schiphol
+Singapore Changi Airport
+Hong Kong International Airport
+Charles de Gaulle Airport (Paris)
+Los Angeles International Airport
+O'Hare International Airport (Chicago)
+Istanbul Ataturk Airport
+Denver International Airport
+Suvarnabhumi Airport (Bangkok)
+Indira Gandhi International Airport (New Delhi)
+Toronto Pearson International Airport
+Jomo Kenyatta International Airport (Nairobi)
+John F. Kennedy International Airport (New York)
+Mexico City International Airport
+San Francisco International Airport
+Dallas/Fort Worth International Airport
+New Chitose Airport (Sapporo)
+Adolfo Suarez Madrid Barajas Airport
+Chhatrapati Shivaji Maharaj International Airport (Mumbai)
+Miami International Airport
+Soekarno-Hatta International Airport (Jakarta)
+Munich Airport
+Kuala Lumpur International Airport
+Ninoy Aquino International Airport (Manila)
+Seattle-Tacoma International Airport
+George Bush Intercontinental Airport (Houston)
+Guangzhou Baiyun International Airport
+Brisbane Airport
+Barcelona-El Prat Airport
+Washington Dulles International Airport
+Doha Hamad International Airport
+Athens International Airport
+Newark Liberty International Airport
+Brussels Airport
+Minneapolis-Saint Paul International Airport
+Orlando International Airport
+Sheremetyevo International Airport (Moscow)
+Salt Lake City International Airport
+Vancouver International Airport
+Zurich Airport
+Dublin Airport
+O.R. Tambo International Airport (Johannesburg)
+El Dorado International Airport (Bogota)
+Ronald Reagan Washington National Airport
+Daniel K. Inouye International Airport (Honolulu)
+Domodedovo International Airport (Moscow)
+EuroAirport Basel Mulhouse Freiburg
+Lisbon Portela Airport
+Vienna International Airport
+Taiwan Taoyuan International Airport
+King Abdulaziz International Airport (Jeddah)
+Rio de Janeiro/Galeao International Airport
+Tampa International Airport
+Ben Gurion Airport (Tel Aviv)
+Manchester Airport
+Kunming Changshui International Airport
+Kansai International Airport (Osaka)
+Louis Armstrong New Orleans International Airport
+Leonardo da Vinci Fiumicino Airport (Rome)
+Logan International Airport (Boston)
+Abu Dhabi International Airport
+Tirana International Airport
+Birmingham Airport
+Suvarnabhumi Airport (Bangkok)
+Lyon-Saint Exupery Airport
+Narita International Airport (Tokyo)
+Leonardo da Vinci Fiumicino Airport (Rome)
+EuroAirport Basel Mulhouse Freiburg
+Kempegowda International Airport (Bangalore)
+Budapest Ferenc Liszt International Airport
+Kuwait International Airport
+Tocumen International Airport (Panama City)
+Ngurah Rai International Airport (Denpasar)
+Nice Cote d'Azur Airport
+Raleigh-Durham International Airport
+Norman Y. Mineta San Jose International Airport
+Hamburg Airport
+Austin-Bergstrom International Airport
+Pulkovo Airport (St. Petersburg)
+King Khalid International Airport (Riyadh)
+Luis Munoz Marin International Airport (San Juan)
+Kahului Airport (Maui)
+Dusseldorf Airport
+Istanbul Ataturk Airport
+Copenhagen Airport
+Stuttgart Airport
+Congonhas Airport (Sao Paulo)
+Louisville Muhammad Ali International Airport
+Copenhagen Airport
+Cologne Bonn Airport
+Paris Orly Airport
+Melbourne Airport
+Chengdu Shuangliu International Airport
+Toulouse-Blagnac Airport
+Tunis-Carthage Airport
+Ronald Reagan Washington National Airport
+Salt Lake City International Airport
+Tokyo Haneda Airport
+George Bush Intercontinental Airport (Houston)
+Montreal-Pierre Elliott Trudeau International Airport
+Narita International Airport (Tokyo)
+Geneva Airport
+Don Miguel Hidalgo y Costilla International Airport (Guadalajara)
+Abeid Amani Karume International Airport (Zanzibar)
+Malpensa Airport (Milan)
+Hartsfield-Jackson Atlanta International Airport
+Kuala Lumpur International Airport
+Pulkovo Airport (St. Petersburg)
+McGhee Tyson Airport (Knoxville)
+Bandaranaike International Airport (Colombo)
+Vienna International Airport
+Fort Lauderdale-Hollywood International Airport
+Portland International Airport
+Southwest Florida International Airport (Fort Myers)
+King Abdulaziz International Airport (Jeddah)
+Abu Dhabi International Airport
+Philadelphia International Airport
+Lisbon Portela Airport
+Kaohsiung International Airport
+Jacksonville International Airport
+Nanjing Lukou International Airport
+New Chitose Airport (Sapporo)
+Brisbane Airport
+Kuwait International Airport
+Dublin Airport
+Bologna Guglielmo Marconi Airport
+Luis Munoz Marin International Airport (San Juan)
+EuroAirport Basel Mulhouse Freiburg
+King Khalid International Airport (Riyadh)
+Domodedovo International Airport (Moscow)
+Ottawa Macdonald-Cartier International Airport
+Jomo Kenyatta International Airport (Nairobi)
+Saskatoon John G. Diefenbaker International Airport
+Detroit Metropolitan Wayne County Airport
+Boise Airport
+Tucson International Airport
+Oslo Gardermoen Airport
+Istanbul Ataturk Airport
+Geneva Airport
+Shanghai Pudong International Airport
+London Heathrow Airport
+Dallas/Fort Worth International Airport
+Daniel K. Inouye International Airport (Honolulu)
+Philadelphia International Airport
+Lisbon Portela Airport
+Oslo Gardermoen Airport
+Keflavik International Airport (Reykjavik)
+Congonhas Airport (Sao Paulo)
+Valencia Airport
+Seattle-Tacoma International Airport
+Brussels Airport
+Birmingham Airport
+Calgary International Airport
+Austin-Bergstrom International Airport
+Leeds Bradford Airport
+Charles de Gaulle Airport (Paris)
+Quebec City Jean Lesage International Airport
+Palm Beach International Airport
+Leonardo da Vinci Fiumicino Airport (Rome)
+Philadelphia International Airport
+Miami International Airport
+Jacksonville International Airport
+Salt Lake City International Airport
+Victoria International Airport
+Taiwan Taoyuan International Airport
+Tampa International Airport
+Eppley Airfield (Omaha)
+George Bush Intercontinental Airport (Houston)
+Vienna International Airport
+Newark Liberty International Airport
+John F. Kennedy International Airport (New York)
+New Chitose Airport (Sapporo)
+Gdansk Lech Walesa Airport
+Congonhas Airport (Sao Paulo)
+Tokyo Haneda Airport
+Copenhagen Airport
+Frankfurt Airport
+Detroit Metropolitan Wayne County Airport
+Portland International Airport
+Dallas/Fort Worth International Airport
+Washington Dulles International Airport
+Sydney Kingsford Smith Airport
+Barcelona-El Prat Airport
+Indira Gandhi International Airport (New Delhi)
+Copenhagen Airport
+Istanbul Ataturk Airport
+LaGuardia Airport (New York)
+Philadelphia International Airport
+Ronald Reagan Washington National Airport

@@ -19,4 +19,4 @@ class Passenger:
     
     def __str__(self):
         #(PassportNumber, FName, LName, NumBags)
-        return f"(\"{self.get_passport_number()}\", \"{self.get_first_name()}\", \"{self.get_last_name()}\", \"{self.get_num_bags()}\"),"
+        return f"('{self.get_passport_number()}', '{self.get_first_name()}', '{self.get_last_name()}', {self.get_num_bags()}),"

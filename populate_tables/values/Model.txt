@@ -1,0 +1,200 @@
+Airbus A220
+Airbus A300
+Airbus A310
+Airbus A318
+Airbus A319
+Airbus A320
+Airbus A321
+Airbus A330
+Airbus A340
+Airbus A350
+Airbus A380
+Boeing 707
+Boeing 717
+Boeing 727
+Boeing 737 Classic series
+Boeing 737 Next Generation series
+Boeing 737 MAX series
+Boeing 747
+Boeing 757
+Boeing 767
+Boeing 777
+Boeing 787 Dreamliner
+Bombardier CRJ100/200
+Bombardier CRJ700/900/1000
+Bombardier CS100 (now Airbus A220-100)
+Bombardier CS300 (now Airbus A220-300)
+Comac ARJ21
+Comac C919
+Convair CV-240
+Convair CV-340
+Convair CV-440
+Douglas DC-3
+Douglas DC-4
+Douglas DC-6
+Douglas DC-7
+Embraer E-Jet E170
+Embraer E-Jet E175
+Embraer E-Jet E190
+Embraer E-Jet E195
+Embraer 120 Brasilia
+Embraer ERJ135
+Embraer ERJ140
+Embraer ERJ145
+Fokker F27
+Fokker F28 Fellowship
+Fokker 50
+Fokker 70
+Fokker 100
+Ilyushin Il-18
+Ilyushin Il-62
+Ilyushin Il-76
+Ilyushin Il-86
+Ilyushin Il-96
+Lockheed L-1011 TriStar
+McDonnell Douglas DC-9
+McDonnell Douglas MD-80
+McDonnell Douglas MD-90
+Sukhoi Superjet 100
+Tupolev Tu-134
+Tupolev Tu-154
+Tupolev Tu-204
+Tupolev Tu-214
+Vickers VC10
+Airbus A220
+Airbus A300
+Airbus A310
+Airbus A318
+Airbus A319
+Airbus A320
+Airbus A321
+Airbus A330
+Airbus A340
+Airbus A350
+Airbus A380
+Boeing 707
+Boeing 717
+Boeing 727
+Boeing 737 Classic series
+Boeing 737 Next Generation series
+Boeing 737 MAX series
+Boeing 747
+Boeing 757
+Boeing 767
+Boeing 777
+Boeing 787 Dreamliner
+Bombardier CRJ100/200
+Bombardier CRJ700/900/1000
+Bombardier CS100 (now Airbus A220-100)
+Bombardier CS300 (now Airbus A220-300)
+Comac ARJ21
+Comac C919
+Convair CV-240
+Convair CV-340
+Convair CV-440
+Douglas DC-3
+Douglas DC-4
+Douglas DC-6
+Douglas DC-7
+Embraer E-Jet E170
+Embraer E-Jet E175
+Embraer E-Jet E190
+Embraer E-Jet E195
+Embraer 120 Brasilia
+Embraer ERJ135
+Embraer ERJ140
+Embraer ERJ145
+Fokker F27
+Fokker F28 Fellowship
+Fokker 50
+Fokker 70
+Fokker 100
+Ilyushin Il-18
+Ilyushin Il-62
+Ilyushin Il-76
+Ilyushin Il-86
+Ilyushin Il-96
+Lockheed L-1011 TriStar
+McDonnell Douglas DC-9
+McDonnell Douglas MD-80
+McDonnell Douglas MD-90
+Sukhoi Superjet 100
+Tupolev Tu-134
+Tupolev Tu-154
+Tupolev Tu-204
+Tupolev Tu-214
+Vickers VC10
+Airbus A220
+Airbus A300
+Airbus A310
+Airbus A318
+Airbus A319
+Airbus A320
+Airbus A321
+Airbus A330
+Airbus A340
+Airbus A350
+Airbus A380
+Boeing 707
+Boeing 717
+Boeing 727
+Boeing 737 Classic series
+Boeing 737 Next Generation series
+Boeing 737 MAX series
+Boeing 747
+Boeing 757
+Boeing 767
+Boeing 777
+Boeing 787 Dreamliner
+Bombardier CRJ100/200
+Bombardier CRJ700/900/1000
+Bombardier CS100 (now Airbus A220-100)
+Bombardier CS300 (now Airbus A220-300)
+Comac ARJ21
+Comac C919
+Convair CV-240
+Convair CV-340
+Convair CV-440
+Douglas DC-3
+Douglas DC-4
+Douglas DC-6
+Douglas DC-7
+Embraer E-Jet E170
+Embraer E-Jet E175
+Embraer E-Jet E190
+Embraer E-Jet E195
+Embraer 120 Brasilia
+Embraer ERJ135
+Embraer ERJ140
+Embraer ERJ145
+Fokker F27
+Fokker F28 Fellowship
+Fokker 50
+Fokker 70
+Fokker 100
+Ilyushin Il-18
+Ilyushin Il-62
+Ilyushin Il-76
+Ilyushin Il-86
+Ilyushin Il-96
+Lockheed L-1011 TriStar
+McDonnell Douglas DC-9
+McDonnell Douglas MD-80
+McDonnell Douglas MD-90
+Sukhoi Superjet 100
+Tupolev Tu-134
+Tupolev Tu-154
+Tupolev Tu-204
+Tupolev Tu-214
+Vickers VC10
+Airbus A350
+Airbus A380
+Boeing 707
+Boeing 717
+Boeing 727
+Boeing 737 Classic series
+Boeing 737 Next Generation series
+Boeing 737 MAX series
+Boeing 747
+Boeing 757
+Boeing 767

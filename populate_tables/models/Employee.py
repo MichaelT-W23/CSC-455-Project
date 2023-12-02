@@ -26,4 +26,5 @@ class Employee:
         return self._airport_code
 
     def __str__(self):
-        return f"(\"{self.employee_id()}\", \"{self.f_name()}\", \"{self.l_name()}\", \"{self.phone_number()}\", \"{self.pilot_license()}\", \"{self.airport_code()}\"),"
+        #(1, 'John', 'Doe', '123-456-7890', 'PL12345', 'JFK');
+        return f"({self.employee_id()}, '{self.f_name()}', '{self.l_name()}', '{self.phone_number()}', '{self.pilot_license()}', '{self.airport_code()}'),"

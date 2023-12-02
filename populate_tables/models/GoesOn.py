@@ -32,4 +32,4 @@ class GoesOn:
 
     def __str__(self):
         #(PassportNumber, TrackingNumber, FlightDate, ArrivalAirport, PlaneID, DepartureAirport, SeatNumber)
-        return f"(\"{self.get_passport_number()}\", \"{self.get_tracking_number()}\", \"{self.get_flight_date()}\", \"{self.get_arrival_airport()}\", \"{self.get_plane_id()}\", \"{self.get_departure_airport()}\", \"{self.get_seat_number()}\"),"
+        return f"('{self.get_passport_number()}', '{self.get_tracking_number()}', '{self.get_flight_date()}', '{self.get_arrival_airport()}', {self.get_plane_id()}, '{self.get_departure_airport()}', {self.get_seat_number()}),"

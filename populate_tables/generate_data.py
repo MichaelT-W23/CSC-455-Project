@@ -9,11 +9,15 @@ from models.WorksOn import WorksOn
 
 def create_insert_statements(table_name: str, table_vals: str, model_list: list):
     insert_str = f"INSERT INTO {table_name} {table_vals} VALUES\n"
-# VALUES ('P123456', 'TN123', '2023-01-01', 'XYZ', 123, 'ABC', 15);
-# "
 
-    # get rid of last comma. Add semicolon ;
-    return None 
+    for i in range(len(model_list)):
+        insert_str += str(model_list[i]) + "\n"
+
+    final_str = insert_str.strip()[:-1]
+
+    with open(f"insert_statments/{table_name.lower()}_insert.sql", "w") as file:
+        file.write(f"{final_str};")
+
 
 def file_to_list(file_name):
     lines = []
@@ -51,34 +55,105 @@ seat_numbers = file_to_list("values/SeatNumber.txt")
 
 def generate_airports():
     table_vals = "(AirportCode, City, State, Country, MaxPlanes)"
-    return None 
+
+    airports = [Airport(airport_codes[i], cities[i], states[i], countries[i], int(max_planes[i])) for i in range(200)]
+
+    create_insert_statements("Airport", table_vals, airports)
+
+    print("Generated airports")
 
 def generate_employees():
     table_vals = "(EmployeeID, FName, LName, PhoneNumber, PilotLicense, AirportCode)"
-    return None 
+
+    employees = []
+
+    for i in range(200):
+        employees.append(Employee(int(employee_ids[i]), f_names[i], l_names[i], phone_numbers[i], pilot_licenses[i], airport_codes[i]))
+
+    create_insert_statements('Employee', table_vals, employees)
+
+    print("Generated Employees")
 
 def generate_flights():
     table_vals = "(ArrivalAirport, DepartureAirport, PlaneID, TrackingNumber, FlightDate, DepartureTime, ArrivalTime, GateNumber)"
-    return None 
+
+    flights = []
+
+    for i in range(200):
+        flights.append(Flight(arrival_airports[i], departure_airports[i], int(plane_ids[i]), tracking_numbers[i], flight_dates[i], departure_airports[i], arrival_times[i], gate_numbers[i]))
+
+    create_insert_statements('Flight', table_vals, flights)
+
+    print("Generated Flights")
 
 def generate_goeson():
     table_vals = "(PassportNumber, TrackingNumber, FlightDate, ArrivalAirport, PlaneID, DepartureAirport, SeatNumber)"
-    return None 
+
+    goes_on = []
+
+    for i in range(200):
+        goes_on.append(GoesOn(passport_numbers[i], tracking_numbers[i], flight_dates[i], arrival_airports[i], int(plane_ids[i]), departure_airports[i], int(seat_numbers[i])))
+
+    create_insert_statements('GoesOn', table_vals, goes_on)
+
+    print("Generated goeson")
 
 def generate_operates():
     table_vals = "(EmployeeID, TrackingNumber, FlightDate, ArrivalAirport, PlaneID, DepartureAirport)"
-    return None 
+
+    operates = []
+
+    for i in range(200):
+        operates.append(Operates(int(employee_ids[i]), tracking_numbers[i], flight_dates[i], arrival_airports[i], int(plane_ids[i]), departure_airports[i]))
+
+    create_insert_statements('Operates', table_vals, operates)
+
+    print("Generated operates")
 
 def generate_passengers():
     table_vals = "(PassportNumber, FName, LName, NumBags)"
-    return None 
+
+    passengers = [Passenger(passport_numbers[i], f_names[i], l_names[i], int(num_bags[i])) for i in range(200)]
+    
+    create_insert_statements('Passenger', table_vals, passengers)
+
+    print("Generated passengers")
 
 def generate_plane():
     table_vals = "(PlaneID, Model, SeatCapacity, Airport)"
-    return None 
+
+    planes = [Plane(int(plane_ids[i]), models[i], int(seat_capacities[i]), airports[i]) for i in range(200)]
+
+    create_insert_statements('Plane', table_vals, planes)
+
+    print("Generated planes")
+
 
 def generate_workson():
     table_vals = "(EmployeeID, PlaneID)"
-    return None 
+
+    works_on = [WorksOn(int(employee_ids[i]), int(plane_ids[i])) for i in range(200)]
+
+    create_insert_statements('WorksOn', table_vals, works_on)
+
+    print("Generated workson")
 
 
+"""
+Call the functions to generate insert statements
+"""
+generate_airports()
+
+generate_employees()
+
+generate_flights()
+
+generate_goeson()
+
+generate_operates()
+
+generate_passengers()
+
+generate_plane()
+
+generate_workson()
