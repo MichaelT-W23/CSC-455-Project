@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seahawk Airlines</title>
+</head>
+    <body>
+
+        <h1>Airline Database</h1>
+
+        <img class="full-width-image" src="airplane.jpg" alt="Full Width Image">
+
+        <div class="columns">
+            <div class="column">
+                <ul>
+                    <li><a href="php/employees_and_operates.php">Employees and Operates</a></li>
+                    <li><a href="php/employee_operates_flight.php">Employees, Operates, and Flight</a></li>
+                    <li><a href="php/employee_pairs.php">Unique Employee Pairs Based On ID</a></li>
+                    <li><a href="php/seat_capacity.php">Average Seating Capacity</a></li>
+                    <li><a href="php/planes_in_aiportcode.php">Planes In Each Airport Code</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <ul>
+                    <li><a href="php/first_names_with_c.php">First Names That Start With 'C'</a></li>
+                    <li><a href="php/usa_employees.php">United States Employee Info</a></li>
+                    <li><a href="php/flights_by_employee.php">Get Number of Flights By Employee</a></li>
+                    <li><a href="https://example.com/link9">Assign Plane To Employee</a></li>
+                    <li><a href="https://example.com/link10">Link 10</a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+
+    <!-- Everything below within the style element can be put in a style.css file if you want.
+    I just put it in the HTML file to maybe make things easier. Uncomment the line below if you do.
+    <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #001f3f; /* Dark blue background */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #ffffff; /* White text */
+        }
+
+        h1 {
+            background-color: #F2F2F2; /* Dark White background */
+            color: #e60000; /* Darker red */
+            font-size: 36px;
+            margin-bottom: 20px;
+            padding: 10px; /* Add padding for better visual appearance */
+        }
+        
+        .full-width-image {
+            height: 290px;
+            width: 55%;
+        }
+
+        .columns {
+            display: flex;
+            justify-content: space-around;
+            padding-bottom: 35px; /* Allows the user to scroll down a little */
+        }
+
+        .column {
+            width: 45%; /* Adjusted column width */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 20px 0;
+        }
+
+        a {
+            display: block;
+            width: 100%; /* Full width within the column */
+            margin: 0 auto; /* Center buttons within the column */
+            padding: 8px; /* The buttons padding */
+            text-decoration: none;
+            background-color: #b30000; 
+            color: #F2F2F2;
+            font-size: 20px; 
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #8c0000; /* Darker red on hover */
+        }
+
+    </style>
+</html>
