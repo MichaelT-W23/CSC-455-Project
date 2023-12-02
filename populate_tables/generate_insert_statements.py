@@ -1,3 +1,4 @@
+import os 
 from models.Airport import Airport
 from models.Employee import Employee
 from models.Flight import Flight
@@ -7,6 +8,7 @@ from models.Passenger import Passenger
 from models.Plane import Plane
 from models.WorksOn import WorksOn
 
+
 def create_insert_statements(table_name: str, table_vals: str, model_list: list):
     insert_str = f"INSERT INTO {table_name} {table_vals} VALUES\n"
 
@@ -15,10 +17,12 @@ def create_insert_statements(table_name: str, table_vals: str, model_list: list)
 
     final_str = insert_str.strip()[:-1]
 
-    with open(f"insert_statments/{table_name.lower()}_insert.sql", "w") as file:
+    with open(f"insert_statements/{table_name.lower()}_insert.sql", "w") as file:
         file.write(f"{final_str};")
 
-
+def print_green(line):
+    print(f"\033[32m{line}\033[0m")
+    
 def file_to_list(file_name):
     lines = []
 
@@ -60,7 +64,7 @@ def generate_airports():
 
     create_insert_statements("Airport", table_vals, airports)
 
-    print("Generated airports")
+    print_green("Generated airports")
 
 def generate_employees():
     table_vals = "(EmployeeID, FName, LName, PhoneNumber, PilotLicense, AirportCode)"
@@ -72,7 +76,7 @@ def generate_employees():
 
     create_insert_statements('Employee', table_vals, employees)
 
-    print("Generated Employees")
+    print_green("Generated Employees")
 
 def generate_flights():
     table_vals = "(ArrivalAirport, DepartureAirport, PlaneID, TrackingNumber, FlightDate, DepartureTime, ArrivalTime, GateNumber)"
@@ -84,7 +88,7 @@ def generate_flights():
 
     create_insert_statements('Flight', table_vals, flights)
 
-    print("Generated Flights")
+    print_green("Generated Flights")
 
 def generate_goeson():
     table_vals = "(PassportNumber, TrackingNumber, FlightDate, ArrivalAirport, PlaneID, DepartureAirport, SeatNumber)"
@@ -96,7 +100,7 @@ def generate_goeson():
 
     create_insert_statements('GoesOn', table_vals, goes_on)
 
-    print("Generated goeson")
+    print_green("Generated goeson")
 
 def generate_operates():
     table_vals = "(EmployeeID, TrackingNumber, FlightDate, ArrivalAirport, PlaneID, DepartureAirport)"
@@ -108,7 +112,7 @@ def generate_operates():
 
     create_insert_statements('Operates', table_vals, operates)
 
-    print("Generated operates")
+    print_green("Generated operates")
 
 def generate_passengers():
     table_vals = "(PassportNumber, FName, LName, NumBags)"
@@ -117,7 +121,7 @@ def generate_passengers():
     
     create_insert_statements('Passenger', table_vals, passengers)
 
-    print("Generated passengers")
+    print_green("Generated passengers")
 
 def generate_plane():
     table_vals = "(PlaneID, Model, SeatCapacity, Airport)"
@@ -126,7 +130,7 @@ def generate_plane():
 
     create_insert_statements('Plane', table_vals, planes)
 
-    print("Generated planes")
+    print_green("Generated planes")
 
 
 def generate_workson():
@@ -136,7 +140,7 @@ def generate_workson():
 
     create_insert_statements('WorksOn', table_vals, works_on)
 
-    print("Generated workson")
+    print_green("Generated workson")
 
 
 """
@@ -157,3 +161,6 @@ generate_passengers()
 generate_plane()
 
 generate_workson()
+
+#Copy the insert_statements folder into the sql directory
+os.system("cp -r ../../CSC-455-Project/populate_tables/insert_statements ../../CSC-455-Project/SQL/")

@@ -1,7 +1,7 @@
 <?php
     require_once('../mysqli_config.php'); // Connect to the database
 
-
+    #ADD QUERY HERE
     $query = '';
 
     $result = mysqli_query($dbc, $query);

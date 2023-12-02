@@ -96,7 +96,15 @@ CALL AssignPlaneToEmployee(145, 717);
 
 
 
-
+-- Random 10th query
+--
+-- search_by_name.php
+--
+-- User enters name into a fielder and the query returns 
+-- users with the name first name.
+SELECT FName, LName
+FROM Employee
+WHERE LOWER(PilotLicense) = LOWER(SearchPrompt);
 
 
 
