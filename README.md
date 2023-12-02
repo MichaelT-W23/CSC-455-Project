@@ -39,3 +39,23 @@ git push
 - Kenny Dearstine 
 - Michael Emborsky
 
+### Links to website
+Wills
+```
+http://ada.cis.uncw.edu/~wse8520/index.html
+```
+
+Kenny
+```
+http://ada.cis.uncw.edu/~khd1227/index.html
+```
+
+Michael Emborsky 
+```
+http://ada.cis.uncw.edu/~mje7206/index.html
+```
+
+Michael Totaro
+```
+http://ada.cis.uncw.edu/~mst5084/index.html
+```
