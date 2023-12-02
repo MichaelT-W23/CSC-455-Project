@@ -3,7 +3,7 @@
 This is our final project for CSC 455.
 
 ### Resources
-- [How to use FileZilla](https://docs.google.com/document/d/1kDDiAZMdc4ov8fwqtlIZfRFJizsigh7ZSQzKRzeeSyw/edit?usp=sharing)
+- [How to use FileZilla/Get Site Working](https://docs.google.com/document/d/1kDDiAZMdc4ov8fwqtlIZfRFJizsigh7ZSQzKRzeeSyw/edit?usp=sharing)
 - [Documentation](https://docs.google.com/document/d/13sCgZgewMzvPzHC6DZ2im5wGZlEMc2C3UAfP15KJ5gY/edit?usp=sharing)
 
 ### Contributors
