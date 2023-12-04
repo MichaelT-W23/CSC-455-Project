@@ -1,25 +1,15 @@
--- Create Employee Table
-CREATE TABLE Employee (
-    EmployeeID INT PRIMARY KEY,
+-- Execute each query one by one. Don't just copy and paste whole file.
+
+-- Execute queries in order from top to bottom.
+
+--DON'T COPY THE COMMENTS 
+
+-- Create Passenger Table
+CREATE TABLE Passenger (
+    PassportNumber VARCHAR(50) PRIMARY KEY,
     FName VARCHAR(255),
     LName VARCHAR(255),
-    PhoneNumber VARCHAR(15),
-    PilotLicense VARCHAR(50),
-    AirportCode VARCHAR(10),
-    FOREIGN KEY (AirportCode) REFERENCES Airport(AirportCode)
-);
-
--- Create Operates Table
-CREATE TABLE Operates (
-    EmployeeID INT,
-    TrackingNumber VARCHAR(50),
-    FlightDate DATE,
-    ArrivalAirport VARCHAR(10),
-    PlaneID INT,
-    DepartureAirport VARCHAR(10),
-    PRIMARY KEY (EmployeeID, TrackingNumber, FlightDate, ArrivalAirport, PlaneID, DepartureAirport),
-    FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID),
-    FOREIGN KEY (TrackingNumber, FlightDate, ArrivalAirport, PlaneID, DepartureAirport) REFERENCES Flight(TrackingNumber, FlightDate, ArrivalAirport, PlaneID, DepartureAirport)
+    NumBags INT
 );
 
 -- Create Airport Table
@@ -31,13 +21,13 @@ CREATE TABLE Airport (
     MaxPlanes INT
 );
 
--- Create WorksOn Table
-CREATE TABLE WorksOn (
-    EmployeeID INT,
-    PlaneID INT,
-    PRIMARY KEY (EmployeeID, PlaneID),
-    FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID),
-    FOREIGN KEY (PlaneID) REFERENCES Plane(PlaneID)
+-- Create Plane Table
+CREATE TABLE Plane (
+    PlaneID INT PRIMARY KEY,
+    Model VARCHAR(255),
+    SeatCapacity INT,
+    Airport VARCHAR(10),
+    FOREIGN KEY (Airport) REFERENCES Airport(AirportCode)
 );
 
 -- Create Flight Table
@@ -56,21 +46,15 @@ CREATE TABLE Flight (
     FOREIGN KEY (PlaneID) REFERENCES Plane(PlaneID)
 );
 
--- Create Plane Table
-CREATE TABLE Plane (
-    PlaneID INT PRIMARY KEY,
-    Model VARCHAR(255),
-    SeatCapacity INT,
-    Airport VARCHAR(10),
-    FOREIGN KEY (Airport) REFERENCES Airport(AirportCode)
-);
-
--- Create Passenger Table
-CREATE TABLE Passenger (
-    PassportNumber VARCHAR(50) PRIMARY KEY,
+-- Create Employee Table
+CREATE TABLE Employee (
+    EmployeeID INT PRIMARY KEY,
     FName VARCHAR(255),
     LName VARCHAR(255),
-    NumBags INT
+    PhoneNumber VARCHAR(15),
+    PilotLicense VARCHAR(50),
+    AirportCode VARCHAR(10),
+    FOREIGN KEY (AirportCode) REFERENCES Airport(AirportCode)
 );
 
 -- Create GoesOn Table
@@ -78,11 +62,53 @@ CREATE TABLE GoesOn (
     PassportNumber VARCHAR(50),
     TrackingNumber VARCHAR(50),
     FlightDate DATE,
-    ArrivalAirport VARCHAR(10),
-    PlaneID INT,
     DepartureAirport VARCHAR(10),
     SeatNumber INT,
-    PRIMARY KEY (PassportNumber, TrackingNumber, FlightDate, ArrivalAirport, PlaneID, DepartureAirport),
-    FOREIGN KEY (PassportNumber) REFERENCES Passenger(PassportNumber),
-    FOREIGN KEY (TrackingNumber, FlightDate, ArrivalAirport, PlaneID, DepartureAirport) REFERENCES Flight(TrackingNumber, FlightDate, ArrivalAirport, PlaneID, DepartureAirport)
+    PRIMARY KEY (PassportNumber, TrackingNumber, FlightDate, DepartureAirport)
 );
+
+-- EXECUTE THIS PART 1 LINE AT A TIME. Alter table/add constraint is considered 1 line.
+CREATE INDEX i1 ON Flight(DepartureAirport);
+
+ALTER TABLE GoesOn
+ADD CONSTRAINT fk4 FOREIGN KEY (DepartureAirport) REFERENCES Flight(DepartureAirport);
+
+
+CREATE INDEX i2 ON Flight(TrackingNumber);
+
+ALTER TABLE GoesOn
+ADD CONSTRAINT fk2 FOREIGN KEY (TrackingNumber) REFERENCES Flight(TrackingNumber);
+
+
+
+CREATE INDEX i3 ON Flight(FlightDate);
+
+ALTER TABLE GoesOn
+ADD CONSTRAINT fk3 FOREIGN KEY (FlightDate) REFERENCES Flight(FlightDate);
+--------------------------------------------------------------------------------------
+
+-- Create Operates Table
+CREATE TABLE Operates (
+    EmployeeID INT,
+    TrackingNumber VARCHAR(50),
+    FlightDate DATE,
+    DepartureAirport VARCHAR(10),
+    PRIMARY KEY (EmployeeID, TrackingNumber, FlightDate, DepartureAirport),
+    FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID),
+    FOREIGN KEY (TrackingNumber) REFERENCES Flight(TrackingNumber),
+    FOREIGN KEY (FlightDate) REFERENCES Flight(FlightDate),
+    FOREIGN KEY (DepartureAirport) REFERENCES Flight(DepartureAirport)
+);
+
+
+-- Create WorksOn Table
+CREATE TABLE WorksOn (
+    EmployeeID INT,
+    PlaneID INT,
+    PRIMARY KEY (EmployeeID, PlaneID),
+    FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID),
+    FOREIGN KEY (PlaneID) REFERENCES Plane(PlaneID)
+);
+
+
+
