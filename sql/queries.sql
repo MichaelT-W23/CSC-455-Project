@@ -6,7 +6,7 @@
 -- Joins the FName column of the Employee table and 
 -- TrackingNumber of the Operates Table where the 
 -- EmployeeID's match.
-SELECT Employee.FName, Operates.TrackingNumber
+SELECT Employee.FName, Employee.LName, Operates.TrackingNumber
 FROM Employee
 JOIN Operates ON Employee.EmployeeID = Operates.EmployeeID;
 
@@ -15,48 +15,56 @@ JOIN Operates ON Employee.EmployeeID = Operates.EmployeeID;
 --
 -- employee_operates_flight.php
 --
--- Joins the FName column of the Employee table, the 
+-- Joins the FName and LName column of the Employee table, the 
 -- TrackingNumber of the Operates Table, and the DepartureTime
 -- of the Flight table where the EmployeeID's matches the Operates
 -- EmployeeID and where the TrackingNumber of the operates table matches
 -- the TrackingNumber of the flight table.
-SELECT Employee.FName, Operates.TrackingNumber, Flight.DepartureTime
+SELECT Employee.FName, Employee.LName, Operates.TrackingNumber, Flight.DepartureTime
 FROM Employee
 JOIN Operates ON Employee.EmployeeID = Operates.EmployeeID
 JOIN Flight ON Operates.TrackingNumber = Flight.TrackingNumber;
 
 
+
 -- Self-Join 
 --
--- employee_pairs.php
+-- same_airport_employees.php
 --
--- Joins each employee with another employee in the table 
--- on columns where their EmployeeID's aren't the same.
-SELECT e1.FName AS Employee1, e2.FName AS Employee2
-FROM Employee e1
-JOIN Employee e2 ON e1.EmployeeID <> e2.EmployeeID;
+-- Joins columns of employees work at the same 
+-- airport where flights depart from. Displays their ID's
+SELECT
+    O1.EmployeeID AS Employee1,
+    O2.EmployeeID AS Employee2,
+    O1.DepartureAirport
+FROM
+    Operates O1
+JOIN
+    Operates O2 ON O1.DepartureAirport = O2.DepartureAirport
+    AND O1.EmployeeID < O2.EmployeeID;
 
 
 -- Aggregate Function
 --
 -- seat_capacity.php
 --
--- Computes the average seatcapacity from plane 
-SELECT AVG(SeatCapacity) AS AvgSeatCapacity
+-- Computes the average seatcapacity from plane and 
+-- round to one decimal place.
+SELECT ROUND(AVG(SeatCapacity), 1) AS AvgSeatCapacity
 FROM Plane;
 
 
 -- Aggregate function using GROUP BY and HAVING
 --
--- planes_in_aiportcode.php
+-- flights_by_airport.php
 --
--- Counts the number of planes per airport code
--- and then groups them by their AirportCode for
--- each result that is greater than 5.
-SELECT AirportCode, COUNT(*) AS NumberOfPlanes
-FROM Plane
-GROUP BY AirportCode
-HAVING COUNT(*) > 5;
+-- TODO 
+--
+SELECT DepartureAirport, COUNT(*) AS TotalFlights
+FROM Flight
+GROUP BY DepartureAirport
+HAVING COUNT(*) > 2; 
+
 
 
 -- Text-based search query using LIKE with wildcard(s)
@@ -70,30 +78,109 @@ WHERE FName LIKE 'C%';
 
 -- Subquery 
 --
--- usa_employees.php
+-- flights_with_cpl_pilot.php
 -- 
--- Selects the EmployeeID, first name, and last name 
--- of empolyees that work in the USA.
-SELECT EmployeeID, FName, LName
-FROM Employee
-WHERE AirportCode IN (SELECT AirportCode FROM Airport WHERE Country = 'USA');
+-- Selects information from the subquery about flights where 
+-- the pilot has a CPL license. 
+-- 
+-- The subquery gets information from the flight, operate, and 
+-- employee table regarding flights. Then joins the tables by 
+-- TrackingNumber and EmployeeID.
+SELECT
+    PilotFirstName,
+    PilotLastName,
+    TrackingNumber,
+    FlightDate,
+    DepartureAirport,
+    ArrivalAirport
+FROM
+    (
+        SELECT
+            E.FName AS PilotFirstName,
+            E.LName AS PilotLastName,
+            F.TrackingNumber,
+            F.FlightDate,
+            F.DepartureAirport,
+            F.ArrivalAirport,
+            E.PilotLicense
+        FROM
+            Flight F
+        JOIN
+            Operates O ON F.TrackingNumber = O.TrackingNumber
+        JOIN
+            Employee E ON O.EmployeeID = E.EmployeeID
+    ) AS SubqueryFlightInfo
+WHERE
+    PilotLicense LIKE 'CPL%';
 
 
--- Call function 
+-- THIS IS THE STORED FUNCTION 
+
+-- Gets the number of flights that occur 
+-- in the afternoon.
+DELIMITER //
+CREATE FUNCTION GetNumAfternoonFlights() RETURNS INT
+BEGIN
+    DECLARE numAfternoonFlights INT;
+    
+    SELECT COUNT(*)
+    INTO numAfternoonFlights
+    FROM Operates O
+    JOIN Flight F ON O.TrackingNumber = F.TrackingNumber
+    WHERE F.DepartureTime > '12:00:00';
+    
+    RETURN numAfternoonFlights;
+END //
+DELIMITER ;
+
+-- Call function (8th Query) 
 -- 
--- flights_by_employee.php
+-- afternoon_flights.php
 --
 -- Gets number of flights of employee with certain ID.
-SELECT GetNumFlightsByEmployee(employeeID) AS NumFlights;
+SELECT TotalAfternoonFlights() AS NumAfternoonFlights;
+
+
+
+
+-- THIS IS THE STORED PROCEDURE 
+--
+-- Adds a new Passenger to the Passenger table.
+DELIMITER //
+CREATE PROCEDURE InsertPassenger(
+    IN p_PassportNumber VARCHAR(10),
+    IN p_FName VARCHAR(50),
+    IN p_LName VARCHAR(50),
+    IN p_NumBags INT
+)
+BEGIN
+    INSERT INTO Passenger (PassportNumber, FName, LName, NumBags)
+    VALUES (p_PassportNumber, p_FName, p_LName, p_NumBags);
+END //
+DELIMITER ;
+
 
 
 -- Call procedure 
 --
--- assign_to_employee.php
+-- create_passenger.php
 --
--- Calls the procedure to add employee to WorksOn table.
-CALL AssignPlaneToEmployee(145, 717);
+-- Call the InsertPassenger stored procedure
+CALL InsertPassenger('D00366190', 'Jacob', 'Smith', 4);
 
+
+-- TRIGGER 
+--
+-- After new passenger inserted add 1 to max planes in Aiport table.
+DELIMITER //
+CREATE TRIGGER UpdateMaxPlanes
+AFTER INSERT ON Passenger 
+FOR EACH ROW
+BEGIN
+    UPDATE Airport
+    SET MaxPlanes = MaxPlanes + 1;
+END //
+DELIMITER ;
 
 
 -- Random 10th query
@@ -105,30 +192,3 @@ CALL AssignPlaneToEmployee(145, 717);
 SELECT FName, LName
 FROM Employee
 WHERE LOWER(PilotLicense) = LOWER(SearchPrompt);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

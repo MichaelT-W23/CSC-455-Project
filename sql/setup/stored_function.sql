@@ -1,17 +1,16 @@
--- This function calculates the number of rows 
--- in the operates table when the EmployeeID and 
--- employeeID are the same. Returns the number 
--- of flights.
---
--- The parameter is the employeedID to be matched 
---
+-- Gets the number of flights that occur 
+-- in the afternoon.
 DELIMITER //
-CREATE FUNCTION GetNumFlightsByEmployee(employeeID INT) RETURNS INT
+CREATE FUNCTION GetNumAfternoonFlights() RETURNS INT
 BEGIN
-    DECLARE numFlights INT;
-    SELECT COUNT(*) INTO numFlights
-    FROM Operates
-    WHERE EmployeeID = employeeID;
-    RETURN numFlights;
-END;
+    DECLARE numAfternoonFlights INT;
+    
+    SELECT COUNT(*)
+    INTO numAfternoonFlights
+    FROM Operates O
+    JOIN Flight F ON O.TrackingNumber = F.TrackingNumber
+    WHERE F.DepartureTime > '12:00:00';
+    
+    RETURN numAfternoonFlights;
+END //
 DELIMITER ;

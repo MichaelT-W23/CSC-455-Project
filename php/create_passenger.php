@@ -1,6 +1,6 @@
 <?php
     // ini_set('error_reporting', 1); // Turn on error reporting - remove once everything works.
-    require_once('../mysqli_config.php'); // Connect to the database
+    require_once('../mysqli_config_project.php'); // Connect to the database
 
     #ADD QUERY HERE. THIS IS NOT A VALID QUERY FOR THIS PROJECT. Just for test purposes 
     $query = 'SELECT PatFName, PatLName, BookTitle, DueDate FROM FACT_BOOK NATURAL JOIN FACT_CHECKOUT NATURAL JOIN FACT_PATRON WHERE InDate is NULL;';
@@ -25,12 +25,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link 3</title>
+    <title>Link 9</title>
 </head>
 
 <body>
 
-    <h1>link 3</h1>
+    <h1>link 9</h1>
 
     <table>
         <tr>

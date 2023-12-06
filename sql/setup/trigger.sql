@@ -1,10 +1,13 @@
-DELIMITER  //
-CREATE TRIGGER UpdateNumBags
-AFTER INSERT ON GoesOn
+
+-- TRIGGER 
+--
+-- After new passenger inserted add 1 to max planes in Aiport table.
+DELIMITER //
+CREATE TRIGGER UpdateMaxPlanes
+AFTER INSERT ON Passenger 
 FOR EACH ROW
 BEGIN
-    UPDATE Passenger
-    SET NumBags = NumBags + 1
-    WHERE PassportNumber = NEW.PassportNumber;
-END;
+    UPDATE Airport
+    SET MaxPlanes = MaxPlanes + 1;
+END //
 DELIMITER ;

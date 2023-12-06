@@ -1,9 +1,8 @@
 <?php
-    // ini_set('error_reporting', 1); // Turn on error reporting - remove once everything works.
-    require_once('../mysqli_config.php'); // Connect to the database
+    require_once('../mysqli_config_project.php'); // Connect to the database
 
     #ADD QUERY HERE. THIS IS NOT A VALID QUERY FOR THIS PROJECT. Just for test purposes 
-    $query = 'SELECT PatFName, PatLName, BookTitle, DueDate FROM FACT_BOOK NATURAL JOIN FACT_CHECKOUT NATURAL JOIN FACT_PATRON WHERE InDate is NULL;';
+    $query = 'SELECT Employee.FName, Employee.LName, Operates.TrackingNumber FROM Employee JOIN Operates ON Employee.EmployeeID = Operates.EmployeeID';
 
     $result = mysqli_query($dbc, $query);
 
@@ -25,26 +24,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link 1</title>
+    <title>Employees and Operates</title>
 </head>
 
 <body>
 
-    <h1>link 1</h1>
+    <h1>Employees and Operates</h1>
 
     <table>
         <tr>
-            <th>Patron First Name</th>
-            <th>Patron Last Name</th>
-            <th>Book Title</th>
-            <th>Due Date</th>
+            <th>FName</th>
+            <th>LName</th>
+            <th>TrackingNumber</th>
         </tr>
         <?php foreach ($all_rows as $checkout) {
             echo "<tr>";
-            echo "<td>" . $checkout['PatFName'] . "</td>";
-            echo "<td>" . $checkout['PatLName'] . "</td>";
-            echo "<td>" . $checkout['BookTitle'] . "</td>";
-            echo "<td>" . $checkout['DueDate'] . "</td>";
+            echo "<td>" . $checkout['FName'] . "</td>";
+            echo "<td>" . $checkout['LName'] . "</td>";
+            echo "<td>" . $checkout['TrackingNumber'] . "</td>";
             echo "</tr>";
         }
         ?>
