@@ -1,0 +1,10 @@
+Run these insert statements in the following order in PhpMyAdmin
+
+airport_insert.sql
+employee_insert.sql
+plane_insert.sql
+flight_insert.sql
+goeson_insert.sql
+operates_insert.sql
+passenger_insert.sql
+workson_insert.sql

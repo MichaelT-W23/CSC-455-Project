@@ -6,7 +6,8 @@ This is our final project for CSC 455.
 - [How to use FileZilla (Get Site Working)](https://docs.google.com/document/d/1kDDiAZMdc4ov8fwqtlIZfRFJizsigh7ZSQzKRzeeSyw/edit?usp=sharing)
 - [Documentation](https://docs.google.com/document/d/13sCgZgewMzvPzHC6DZ2im5wGZlEMc2C3UAfP15KJ5gY/edit?usp=sharing)
 - [To-Do List](https://docs.google.com/document/d/1xZgERW8QmkQfl2K_qA5OEg0roKJR_dxC_PlkVuYD9vk/edit?usp=sharing)
-- [Instructions](https://people.uncw.edu/mferner/csc455/FinalProjectRequirements.pdf)
+- [Ferner's Project Instructions](https://people.uncw.edu/mferner/csc455/FinalProjectRequirements.pdf)
+- [How to setup Database in phpMyAdmin](https://docs.google.com/document/d/1LMuUL-F8LOM-3Zb8hIA03bq7bCeUcNIBUYV6eEImOqU/edit)
 
 ### Contributors
 - Wills Edgar 

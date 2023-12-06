@@ -6,28 +6,28 @@
 
 -- Create Passenger Table
 CREATE TABLE Passenger (
-    PassportNumber VARCHAR(50) PRIMARY KEY,
-    FName VARCHAR(255),
-    LName VARCHAR(255),
+    PassportNumber VARCHAR(10) PRIMARY KEY,
+    FName VARCHAR(50),
+    LName VARCHAR(50),
     NumBags INT
 );
 
 -- Create Airport Table
 CREATE TABLE Airport (
     AirportCode VARCHAR(10) PRIMARY KEY,
-    City VARCHAR(255),
-    State VARCHAR(255),
-    Country VARCHAR(255),
+    City VARCHAR(25),
+    State VARCHAR(5),
+    Country VARCHAR(50),
     MaxPlanes INT
 );
 
 -- Create Plane Table
 CREATE TABLE Plane (
     PlaneID INT PRIMARY KEY,
-    Model VARCHAR(255),
+    Model VARCHAR(50),
     SeatCapacity INT,
-    Airport VARCHAR(10),
-    FOREIGN KEY (Airport) REFERENCES Airport(AirportCode)
+    AirportCode VARCHAR(10),
+    FOREIGN KEY (AirportCode) REFERENCES Airport(AirportCode)
 );
 
 -- Create Flight Table
@@ -35,7 +35,7 @@ CREATE TABLE Flight (
     ArrivalAirport VARCHAR(10),
     DepartureAirport VARCHAR(10),
     PlaneID INT,
-    TrackingNumber VARCHAR(50),
+    TrackingNumber VARCHAR(10),
     FlightDate DATE,
     DepartureTime TIME,
     ArrivalTime TIME,
@@ -49,18 +49,18 @@ CREATE TABLE Flight (
 -- Create Employee Table
 CREATE TABLE Employee (
     EmployeeID INT PRIMARY KEY,
-    FName VARCHAR(255),
-    LName VARCHAR(255),
+    FName VARCHAR(50),
+    LName VARCHAR(50),
     PhoneNumber VARCHAR(15),
-    PilotLicense VARCHAR(50),
-    AirportCode VARCHAR(10),
+    PilotLicense VARCHAR(15),
+    AirportCode VARCHAR(5),
     FOREIGN KEY (AirportCode) REFERENCES Airport(AirportCode)
 );
 
 -- Create GoesOn Table
 CREATE TABLE GoesOn (
-    PassportNumber VARCHAR(50),
-    TrackingNumber VARCHAR(50),
+    PassportNumber VARCHAR(15),
+    TrackingNumber VARCHAR(10),
     FlightDate DATE,
     DepartureAirport VARCHAR(10),
     SeatNumber INT,
@@ -72,6 +72,7 @@ CREATE INDEX i1 ON Flight(DepartureAirport);
 
 ALTER TABLE GoesOn
 ADD CONSTRAINT fk4 FOREIGN KEY (DepartureAirport) REFERENCES Flight(DepartureAirport);
+
 
 
 CREATE INDEX i2 ON Flight(TrackingNumber);
@@ -90,7 +91,7 @@ ADD CONSTRAINT fk3 FOREIGN KEY (FlightDate) REFERENCES Flight(FlightDate);
 -- Create Operates Table
 CREATE TABLE Operates (
     EmployeeID INT,
-    TrackingNumber VARCHAR(50),
+    TrackingNumber VARCHAR(10),
     FlightDate DATE,
     DepartureAirport VARCHAR(10),
     PRIMARY KEY (EmployeeID, TrackingNumber, FlightDate, DepartureAirport),

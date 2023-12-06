@@ -84,31 +84,31 @@ def generate_flights():
     flights = []
 
     for i in range(200):
-        flights.append(Flight(arrival_airports[i], departure_airports[i], int(plane_ids[i]), tracking_numbers[i], flight_dates[i], departure_airports[i], arrival_times[i], gate_numbers[i]))
+        flights.append(Flight(arrival_airports[i], departure_airports[i], int(plane_ids[i]), tracking_numbers[i], flight_dates[i], departure_times[i], arrival_times[i], gate_numbers[i]))
 
     create_insert_statements('Flight', table_vals, flights)
 
     print_green("Generated Flights")
 
 def generate_goeson():
-    table_vals = "(PassportNumber, TrackingNumber, FlightDate, ArrivalAirport, PlaneID, DepartureAirport, SeatNumber)"
+    table_vals = "(PassportNumber, TrackingNumber, FlightDate, DepartureAirport, SeatNumber)"
 
     goes_on = []
 
     for i in range(200):
-        goes_on.append(GoesOn(passport_numbers[i], tracking_numbers[i], flight_dates[i], arrival_airports[i], int(plane_ids[i]), departure_airports[i], int(seat_numbers[i])))
+        goes_on.append(GoesOn(passport_numbers[i], tracking_numbers[i], flight_dates[i], departure_airports[i], int(seat_numbers[i])))
 
     create_insert_statements('GoesOn', table_vals, goes_on)
 
     print_green("Generated goeson")
 
 def generate_operates():
-    table_vals = "(EmployeeID, TrackingNumber, FlightDate, ArrivalAirport, PlaneID, DepartureAirport)"
+    table_vals = "(EmployeeID, TrackingNumber, FlightDate, DepartureAirport)"
 
     operates = []
 
     for i in range(200):
-        operates.append(Operates(int(employee_ids[i]), tracking_numbers[i], flight_dates[i], arrival_airports[i], int(plane_ids[i]), departure_airports[i]))
+        operates.append(Operates(int(employee_ids[i]), tracking_numbers[i], flight_dates[i], departure_airports[i]))
 
     create_insert_statements('Operates', table_vals, operates)
 
@@ -124,9 +124,9 @@ def generate_passengers():
     print_green("Generated passengers")
 
 def generate_plane():
-    table_vals = "(PlaneID, Model, SeatCapacity, Airport)"
+    table_vals = "(PlaneID, Model, SeatCapacity, AirportCode)"
 
-    planes = [Plane(int(plane_ids[i]), models[i], int(seat_capacities[i]), airports[i]) for i in range(200)]
+    planes = [Plane(int(plane_ids[i]), models[i], int(seat_capacities[i]), airport_codes[i]) for i in range(200)]
 
     create_insert_statements('Plane', table_vals, planes)
 

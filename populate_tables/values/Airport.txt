@@ -11,7 +11,7 @@ Singapore Changi Airport
 Hong Kong International Airport
 Charles de Gaulle Airport (Paris)
 Los Angeles International Airport
-O'Hare International Airport (Chicago)
+O''Hare International Airport (Chicago)
 Istanbul Ataturk Airport
 Denver International Airport
 Suvarnabhumi Airport (Bangkok)
@@ -79,7 +79,7 @@ Budapest Ferenc Liszt International Airport
 Kuwait International Airport
 Tocumen International Airport (Panama City)
 Ngurah Rai International Airport (Denpasar)
-Nice Cote d'Azur Airport
+Nice Cote d''Azur Airport
 Raleigh-Durham International Airport
 Norman Y. Mineta San Jose International Airport
 Hamburg Airport
