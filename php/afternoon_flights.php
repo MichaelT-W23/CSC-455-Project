@@ -3,10 +3,9 @@
     require_once('../mysqli_config_project.php'); // Connect to the database
 
     #ADD QUERY HERE. THIS IS NOT A VALID QUERY FOR THIS PROJECT. Just for test purposes 
-    $query = 'SELECT PatFName, PatLName, BookTitle, DueDate FROM FACT_BOOK NATURAL JOIN FACT_CHECKOUT NATURAL JOIN FACT_PATRON WHERE InDate is NULL;';
+    $query = 'SELECT GetNumAfternoonFlights() AS NumAfternoonFlights';
 
     $result = mysqli_query($dbc, $query);
-
 
     if ($result)
         $all_rows = mysqli_fetch_all($result, MYSQLI_ASSOC); 
@@ -25,31 +24,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link 8</title>
+    <title>Number of Afternoon Flights</title>
 </head>
 
 <body>
 
-    <h1>link 8</h1>
+    <h1>Number of Afternoon Flights</h1>
 
+    <p style="margin-left: 20px; font-size: 20px; text-align: left; font-weight: bold;">
+        <?php
+            $numRows = mysqli_num_rows($result);
+            $decrementedNumRows = $numRows - 1;
+            echo "* Showing Rows 0 - " . $decrementedNumRows . " (" . $numRows . " Total)";
+        ?>
+    </p>
+    
     <table>
         <tr>
-            <th>Patron First Name</th>
-            <th>Patron Last Name</th>
-            <th>Book Title</th>
-            <th>Due Date</th>
+            <th>Number of Afternoon Flights</th>
         </tr>
         <?php foreach ($all_rows as $checkout) {
             echo "<tr>";
-            echo "<td>" . $checkout['PatFName'] . "</td>";
-            echo "<td>" . $checkout['PatLName'] . "</td>";
-            echo "<td>" . $checkout['BookTitle'] . "</td>";
-            echo "<td>" . $checkout['DueDate'] . "</td>";
+            echo "<td>" . $checkout['NumAfternoonFlights'] . "</td>";
             echo "</tr>";
         }
         ?>
     </table>
-
 </body>
 
 <style>
@@ -71,7 +71,7 @@
     }
 
     table {
-        width: 100%;
+        width: 20%;
         border-collapse: collapse;
         margin-top: 20px;
         background-color: #333; /* Dark gray background */

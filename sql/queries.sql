@@ -58,7 +58,7 @@ FROM Plane;
 --
 -- flights_by_airport.php
 --
--- TODO 
+-- Displays airports that have more than 2 total flights
 --
 SELECT DepartureAirport, COUNT(*) AS TotalFlights
 FROM Flight
@@ -138,7 +138,7 @@ DELIMITER ;
 -- afternoon_flights.php
 --
 -- Gets number of flights of employee with certain ID.
-SELECT TotalAfternoonFlights() AS NumAfternoonFlights;
+SELECT GetNumAfternoonFlights() AS NumAfternoonFlights;
 
 
 
@@ -189,6 +189,5 @@ DELIMITER ;
 --
 -- User enters name into a fielder and the query returns 
 -- users with the name first name.
-SELECT FName, LName
-FROM Employee
-WHERE LOWER(PilotLicense) = LOWER(SearchPrompt);
+SELECT FName, LName FROM Employee 
+WHERE LOWER(FName) = LOWER(searchPromptName);

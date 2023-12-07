@@ -3,7 +3,7 @@
     require_once('../mysqli_config_project.php'); // Connect to the database
 
     #ADD QUERY HERE. THIS IS NOT A VALID QUERY FOR THIS PROJECT. Just for test purposes 
-    $query = 'SELECT PatFName, PatLName, BookTitle, DueDate FROM FACT_BOOK NATURAL JOIN FACT_CHECKOUT NATURAL JOIN FACT_PATRON WHERE InDate is NULL;';
+    $query = 'SELECT ROUND(AVG(SeatCapacity), 1) AS AvgSeatCapacity FROM Plane';
 
     $result = mysqli_query($dbc, $query);
 
@@ -25,31 +25,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link 4</title>
+    <title>Average Seating Capacity</title>
 </head>
 
 <body>
 
-    <h1>link 4</h1>
+    <h1>Average Seating Capacity</h1>
+    
+    <p style="margin-left: 20px; font-size: 20px; text-align: left; font-weight: bold;">
+        <?php
+            $numRows = mysqli_num_rows($result);
+            $decrementedNumRows = $numRows - 1;
+            echo "* Showing Rows 0 - " . $decrementedNumRows . " (" . $numRows . " Total)";
+        ?>
+    </p>
 
     <table>
         <tr>
-            <th>Patron First Name</th>
-            <th>Patron Last Name</th>
-            <th>Book Title</th>
-            <th>Due Date</th>
+            <th>Average Seating Capacity</th>
         </tr>
         <?php foreach ($all_rows as $checkout) {
             echo "<tr>";
-            echo "<td>" . $checkout['PatFName'] . "</td>";
-            echo "<td>" . $checkout['PatLName'] . "</td>";
-            echo "<td>" . $checkout['BookTitle'] . "</td>";
-            echo "<td>" . $checkout['DueDate'] . "</td>";
+            echo "<td>" . $checkout['AvgSeatCapacity'] . "</td>";
             echo "</tr>";
         }
         ?>
     </table>
-
 </body>
 
 <style>
@@ -71,7 +72,7 @@
     }
 
     table {
-        width: 100%;
+        width: 20%
         border-collapse: collapse;
         margin-top: 20px;
         background-color: #333; /* Dark gray background */

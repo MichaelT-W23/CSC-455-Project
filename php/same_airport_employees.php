@@ -3,7 +3,15 @@
     require_once('../mysqli_config_project.php'); // Connect to the database
 
     #ADD QUERY HERE. THIS IS NOT A VALID QUERY FOR THIS PROJECT. Just for test purposes 
-    $query = 'SELECT PatFName, PatLName, BookTitle, DueDate FROM FACT_BOOK NATURAL JOIN FACT_CHECKOUT NATURAL JOIN FACT_PATRON WHERE InDate is NULL;';
+    $query = 'SELECT
+                O1.EmployeeID AS Employee1,
+                O2.EmployeeID AS Employee2,
+                O1.DepartureAirport
+              FROM
+                Operates O1
+              JOIN
+                Operates O2 ON O1.DepartureAirport = O2.DepartureAirport
+                AND O1.EmployeeID < O2.EmployeeID';
 
     $result = mysqli_query($dbc, $query);
 
@@ -25,31 +33,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link 3</title>
+    <title>Employees at The Same Airport</title>
 </head>
 
 <body>
 
-    <h1>link 3</h1>
+    <h1>Employees at The Same Airport</h1>
 
+    <p style="margin-left: 20px; font-size: 20px; text-align: left; font-weight: bold;">
+        <?php
+            $numRows = mysqli_num_rows($result);
+            $decrementedNumRows = $numRows - 1;
+            echo "* Showing Rows 0 - " . $decrementedNumRows . " (" . $numRows . " Total)";
+        ?>
+    </p>
+    
     <table>
         <tr>
-            <th>Patron First Name</th>
-            <th>Patron Last Name</th>
-            <th>Book Title</th>
-            <th>Due Date</th>
+            <th>Employee1</th>
+            <th>Employee2</th>
+            <th>DepartureAirport</th>
         </tr>
         <?php foreach ($all_rows as $checkout) {
             echo "<tr>";
-            echo "<td>" . $checkout['PatFName'] . "</td>";
-            echo "<td>" . $checkout['PatLName'] . "</td>";
-            echo "<td>" . $checkout['BookTitle'] . "</td>";
-            echo "<td>" . $checkout['DueDate'] . "</td>";
+            echo "<td>" . $checkout['Employee1'] . "</td>";
+            echo "<td>" . $checkout['Employee2'] . "</td>";
+            echo "<td>" . $checkout['DepartureAirport'] . "</td>";
             echo "</tr>";
         }
         ?>
     </table>
-
+    <p style="padding-bottom: 40px;"></p>
 </body>
 
 <style>

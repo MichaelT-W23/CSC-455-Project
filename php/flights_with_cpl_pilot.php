@@ -1,10 +1,34 @@
 <?php
+    // ini_set('error_reporting', 1); // Turn on error reporting - remove once everything works.
     require_once('../mysqli_config_project.php'); // Connect to the database
 
     #ADD QUERY HERE. THIS IS NOT A VALID QUERY FOR THIS PROJECT. Just for test purposes 
-    $query = 'SELECT Employee.FName, Employee.LName, Operates.TrackingNumber 
-              FROM Employee 
-              JOIN Operates ON Employee.EmployeeID = Operates.EmployeeID';
+    $query = "SELECT
+                PilotFirstName,
+                PilotLastName,
+                TrackingNumber,
+                FlightDate,
+                DepartureAirport,
+                ArrivalAirport
+              FROM
+                (
+                    SELECT
+                        E.FName AS PilotFirstName,
+                        E.LName AS PilotLastName,
+                        F.TrackingNumber,
+                        F.FlightDate,
+                        F.DepartureAirport,
+                        F.ArrivalAirport,
+                        E.PilotLicense
+                    FROM
+                        Flight F
+                    JOIN
+                        Operates O ON F.TrackingNumber = O.TrackingNumber
+                    JOIN
+                        Employee E ON O.EmployeeID = E.EmployeeID
+                ) AS SubqueryFlightInfo
+            WHERE
+                PilotLicense LIKE 'CPL%'";
 
     $result = mysqli_query($dbc, $query);
 
@@ -26,13 +50,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employees and Operates</title>
+    <title>Flights With Pilots Who Have CPL Licenses</title>
 </head>
 
 <body>
 
-    <h1>Employees and Operates</h1>
-
+    <h1>Flights With Pilots Who Have CPL Licenses</h1>
+    
     <p style="margin-left: 20px; font-size: 20px; text-align: left; font-weight: bold;">
         <?php
             $numRows = mysqli_num_rows($result);
@@ -40,18 +64,24 @@
             echo "* Showing Rows 0 - " . $decrementedNumRows . " (" . $numRows . " Total)";
         ?>
     </p>
-    
+
     <table>
         <tr>
-            <th>FName</th>
-            <th>LName</th>
+            <th>PilotFirstName</th>
+            <th>PilotLastName</th>
             <th>TrackingNumber</th>
+            <th>FlightDate</th>
+            <th>DepartureAirport</th>
+            <th>ArrivalAirport</th>
         </tr>
         <?php foreach ($all_rows as $checkout) {
             echo "<tr>";
-            echo "<td>" . $checkout['FName'] . "</td>";
-            echo "<td>" . $checkout['LName'] . "</td>";
+            echo "<td>" . $checkout['PilotFirstName'] . "</td>";
+            echo "<td>" . $checkout['PilotLastName'] . "</td>";
             echo "<td>" . $checkout['TrackingNumber'] . "</td>";
+            echo "<td>" . $checkout['FlightDate'] . "</td>";
+            echo "<td>" . $checkout['DepartureAirport'] . "</td>";
+            echo "<td>" . $checkout['ArrivalAirport'] . "</td>";
             echo "</tr>";
         }
         ?>
