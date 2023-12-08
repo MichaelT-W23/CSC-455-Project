@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     try {
         $stmt = mysqli_prepare($dbc, $insertQuery);
-        mysqli_stmt_bind_param($stmt, "sssi", $passportNumber, $firstName, $lastName, $numberOfBags);
+        mysqli_stmt_bind_param($stmt, "sssi", strtoupper($passportNumber), $firstName, $lastName, $numberOfBags);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
     } catch (PDOException $e) {
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <a href="index.html" style="text-decoration: none; color: #ffffff; font-size: 20px;">
             &#9664; Back To Home 
         </a>
-        <span style="margin: 0 auto; position:relative; left: -85px;">Create Passenger</span>
+        <span style="margin: 0 auto; position:relative; left: -80px;">Create Passenger</span>
     </h1>
 
     <form id="myForm" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">

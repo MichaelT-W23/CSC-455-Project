@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <a href="index.html" style="text-decoration: none; color: #ffffff; font-size: 20px;">
             &#9664; Back To Home 
         </a>
-        <span style="margin: 0 auto; position:relative; left: -85px;">Search Employee</span>
+        <span style="margin: 0 auto; position:relative; left: -80px;">Search Employee</span>
     </h1>
 
     <form id="myForm" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
